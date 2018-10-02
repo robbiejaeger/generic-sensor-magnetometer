@@ -9,6 +9,9 @@ body {
 #compass img {
   height: 300px;
   width: 300px;
+
+  transform-origin: center center;
+  transition: transform 1s ease-in;
 }
 
 #heading p {
