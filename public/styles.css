@@ -1,3 +1,7 @@
 body {
-  background-color: cyan;
+  background-color: #F5F5F5;
+  color: #212121;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  text-align: center;
 }
