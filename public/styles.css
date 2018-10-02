@@ -10,3 +10,8 @@ body {
   height: 300px;
   width: 300px;
 }
+
+#heading p {
+  font-size: 2em;
+  font-weight: 700;
+}
