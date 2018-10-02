@@ -16,7 +16,7 @@
   };
 
   const rotateCompass = heading => {
-    compassImg.style.transform = `rotate(${heading}deg)`;
+    compassImg.style.transform = `rotate(-${heading}deg)`;
   };
 
   initSensor();
