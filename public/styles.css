@@ -11,7 +11,7 @@ body {
   width: 300px;
 
   transform-origin: center center;
-  transition: transform 1s ease-in;
+  transition: transform 1s ease;
 }
 
 #heading p {
