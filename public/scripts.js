@@ -18,23 +18,23 @@
   //   }, 1000);
   // };
 
-  const initSensor = () => {
-    magSensor.addEventListener('error', handleError);
-    magSensor.addEventListener('reading', determineHeading);
-    startSensorReading(magSensor);
+  const initSensor = sensor => {
+    sensor.addEventListener('error', handleError);
+    sensor.addEventListener('reading', determineHeading.bind(sensor));
+    startSensorReading(sensor);
   };
 
   const determineHeading = () => {
-    let x = magSensor.x;
-    let y = magSensor.y;
-    let z = magSensor.z;
+    let x = absOrientSensor.x;
+    let y = absOrientSensor.y;
+    let z = absOrientSensor.z;
 
     console.log('x:', x, 'y:', y, 'z:', z);
   };
 
   const handleError = event => {
     if (event.error.name === 'NotReadableError') {
-      displayError('Magnetometer not available on this device.');
+      displayError('Absolute Orientation not available on this device asdad.');
     } else if (event.error.name === 'NotAllowedError') {
       displayError('Permission to access sensor was denied.');
     }
@@ -57,11 +57,11 @@
   };
 
   try {
-    const magSensor = new Magnetometer({ frequency: 10 });
-    initSensor();
+    const absOrientSensor = new AbsoluteOrientationSensor({ frequency: 10 });
+    initSensor(absOrientSensor);
   }
   catch (error) {
     console.error(error);
-    displayError('Magnetometer not available on this device.');
+    displayError('Absolute Orientation not available on this device.');
   }
 })();
